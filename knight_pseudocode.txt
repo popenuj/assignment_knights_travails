@@ -1,10 +1,33 @@
 [
   [0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0],
-  [1,0,1,0,0,0,0,0],
-  [0,0,0,1,0,0,0,0],
-  [0,X,0,0,0,0,0,0],
+  [0,0,1,0,1,0,0,0],
+  [0,1,0,0,0,1,0,0],
+  [0,0,0,X,0,0,0,0],
+  [0,1,0,0,0,1,0,0],
+  [0,0,1,0,1,0,0,0],
+  [0,0,0,0,0,0,2,0],
 ]
+
+starting position [7,1]
+positions_visited = [starting position]
+CONSTANT:
+[
+[-2, +1],
+[-1, +2],
+[+1, +2],
+[+2, +1],
+[+2, -1],
+[+1, -2],
+[-1, -2],
+[-2, -1]
+]
+Move Tree
+  finds all knight's moves within board range using CONSTANT
+  for each first move create an array of possible moves
+
+
+DFS until (:depth == 64)
+  checks valid moves within board range against visited positions
+  for all spots that pass these tests, create a move struct
+  struct :current_position, :children([array of possible moves]), :depth, :parent)
